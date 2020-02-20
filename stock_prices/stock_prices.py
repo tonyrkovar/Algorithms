@@ -12,10 +12,19 @@ def find_max_profit(prices):
     if prices[i] < min_value and max_index > i:
       min_index = i
       min_value = prices[i]
-    elif prices[i] > max_value and min_index < i:
-      max_index = i
-      max_value = prices[i]
+      print(f'IIII: {i}')
+    for k in range(i+1, len(prices)):
+      print(f'I: {i}, K: {k}')
+      if prices[k] > max_value and min_index < k:
+        max_index = k
+        max_value = prices[k]
 
+
+
+
+
+  print(f'Final Min: {min_value}, Final Max: {max_value}')
+  print(f'final Min index: {min_index}, Final Max Index: {max_index}')
   return max_value - min_value
 
 
